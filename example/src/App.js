@@ -1,10 +1,16 @@
 import React from 'react'
 
-import { ExampleComponent } from 'multi-levels-popper'
-import 'multi-levels-popper/dist/index.css'
+import { MultiLevelsPopper } from 'multi-levels-popper'
+import SettingPopper from './components/SettingPopper'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <div style={{ position: 'absolute', top: '50%', left: '50%' }}>
+      <MultiLevelsPopper arrow right dark basePopper={<SettingPopper />}>
+        <div>Hover me!</div>
+      </MultiLevelsPopper>
+    </div>
+  )
 }
 
 export default App

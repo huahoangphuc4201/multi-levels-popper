@@ -1,6 +1,4 @@
-import React from 'react'
-import styles from './styles.module.css'
-
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+import 'multi-levels-popper/dist/index.css'
+export { default as MultiLevelsPopper } from './components/MultiLevelsPopper'
+export { default as Popper } from './components/Popper'
+export { default as PopperItem } from './components/PopperItem'
