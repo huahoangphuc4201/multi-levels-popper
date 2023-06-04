@@ -52,14 +52,29 @@ When you click on `PopperItem` which has `childPopper` prop, it will open the ch
 
 ## MultiLevelsPopper Props
 
-| **Prop**                       | **Description**                                                                                                            | **Required** |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------- | :----------: | --- | --- |
-| **basePopper**                 | It is the first level popper(parent)                                                                                       |      ✔       |
-| **[left, right, top, bottom]** | Pick up one position, where you want your popper shown.                                                                    |      ✔       |
-| **arrow**                      | Your popper will have tooltip arrow.                                                                                       |              |
-| **visible**                    | The popper is always visible with this prop. If it not have this prop, it is only visible when you hover the wrapped node. |              |
-| **popperPosition**             | This prop helps you change your popper position easily. ie: {top : '20px'}, {left\|right\|top\|bottom : '...'}             |              |
-| **dark**                       | Switch to dark theme.                                                                                                      |              |     |     |
+| **Prop**                       | **Description**                                                                                                                   | **Required** |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- | :----------: | --- | --- | --- | --- |
+| **basePopper**                 | It is the first level popper(parent)                                                                                              |      ✔       |
+| **[left, right, top, bottom]** | Pick up one position, where you want your popper shown.                                                                           |      ✔       |
+| **arrow**                      | Your popper will have tooltip arrow.                                                                                              |              |
+| **visible**                    | The popper is always visible with this prop. If it not have this prop, it is only visible when you hover the wrapped node.        |              |
+| **popperPosition**             | This prop helps you change your popper position easily. ie: `popperPosition={top : '20px'}`, `{left\|right\|top\|bottom : '...'}` |              |
+| **dark**                       | Switch to dark theme.                                                                                                             |              |
+| **className**                  | You can pass className from parent.                                                                                               |              |     |     |     |     |
+
+## Popper Props
+
+| **Prop**      | **Description**                                               | **Required** |
+| ------------- | ------------------------------------------------------------- | :----------: |
+| **title**     | Popper's header title.                                        |              |
+| **maxHeigth** | This will enable vertical scroll bar. ie: `maxHeight='200px'` |              |
+| **className** | You can pass className from parent.                           |              |
+
+## PopperItem Props
+
+| **Prop**        | **Description**                                                                      | **Required** |
+| --------------- | ------------------------------------------------------------------------------------ | :----------: |
+| **childPopper** | Child popper(next level popper). ie: `<PopperItem childPopper={<LanguagePopper />}>` |              |
 
 ## License
 
