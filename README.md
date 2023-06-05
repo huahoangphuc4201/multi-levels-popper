@@ -55,7 +55,7 @@ When you click on `PopperItem` which has `childPopper` prop, it will open the ch
 | **Prop**                      | **Description**                                                                                 | **Required** |
 | ----------------------------- | ----------------------------------------------------------------------------------------------- | :----------: |
 | **basePopper**                | The first level popper.ie: `basePopper={<BasePopper />}`                                        |      ✔       |
-| **[left, right, top bottom]** | Pick up one position, where you want to display popper.                                         |      ✔       |
+| **[left, right, top bottom]** | Choose one of them, where you want to display popper.                                           |      ✔       |
 | **arrow**                     | Enable tooltip arrow.                                                                           |              |
 | **visible**                   | Always display popper.                                                                          |              |
 | **popperPosition**            | Change popper position easier. ie: `popperPosition={{top : '20px'}}` (left, right, top, bottom) |              |
