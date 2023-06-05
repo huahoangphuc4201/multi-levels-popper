@@ -52,29 +52,29 @@ When you click on `PopperItem` which has `childPopper` prop, it will open the ch
 
 ## MultiLevelsPopper Props
 
-| **Prop**                      | **Description**                                                                                                                   | **Required** |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | :----------: |
-| **basePopper**                | The first level popper.ie: `<span style={color:'orange'}>basePopper={<BasePopper />}</span>`                                      |      ✔       |
-| **[left, right, top bottom]** | Pick up one position, where you want to display popper.                                                                           |      ✔       |
-| **arrow**                     | Enable tooltip arrow.                                                                                                             |              |
-| **visible**                   | Always display popper.                                                                                                            |              |
-| **popperPosition**            | Change popper position easier.ie: `<span style={color:'orange'}>popperPosition={{top : '20px'}}</span>`(left, right, top, bottom) |              |
-| **className**                 | You can pass class name from parent.                                                                                              |              |
-| **dark**                      | Switch to dark theme                                                                                                              |              |
+| **Prop**                      | **Description**                                                                                                                 | **Required** |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | :----------: |
+| **basePopper**                | The first level popper.ie: `<span style="color:orange">basePopper={<BasePopper />}</span>`                                      |      ✔       |
+| **[left, right, top bottom]** | Pick up one position, where you want to display popper.                                                                         |      ✔       |
+| **arrow**                     | Enable tooltip arrow.                                                                                                           |              |
+| **visible**                   | Always display popper.                                                                                                          |              |
+| **popperPosition**            | Change popper position easier.ie: `<span style="color:orange">popperPosition={{top : '20px'}}</span>`(left, right, top, bottom) |              |
+| **className**                 | You can pass className from parent.                                                                                             |              |
+| **dark**                      | Switch to dark theme                                                                                                            |              |
 
 ## Popper Props
 
-| **Prop**      | **Description**                                                                                   | **Required** |
-| ------------- | ------------------------------------------------------------------------------------------------- | :----------: |
-| **title**     | Popper's header title.                                                                            |              |
-| **maxHeigth** | This will enable vertical scroll bar. ie: `<span style={color:'orange'}>maxHeight='200px'</span>` |              |
-| **className** | You can pass className from parent.                                                               |              |
+| **Prop**      | **Description**                                                                                 | **Required** |
+| ------------- | ----------------------------------------------------------------------------------------------- | :----------: |
+| **title**     | Popper's header title.                                                                          |              |
+| **maxHeigth** | This will enable vertical scroll bar. ie: `<span style="color:orange">maxHeight='200px'</span>` |              |
+| **className** | You can pass className from parent.                                                             |              |
 
 ## PopperItem Props
 
-| **Prop**        | **Description**                                                                                             | **Required** |
-| --------------- | ----------------------------------------------------------------------------------------------------------- | :----------: |
-| **childPopper** | Child popper(next level popper). ie: `<span style={color:'orange'}>childPopper={<LanguagePopper />}</span>` |              |
+| **Prop**        | **Description**                                                                                           | **Required** |
+| --------------- | --------------------------------------------------------------------------------------------------------- | :----------: |
+| **childPopper** | Child popper(next level popper). ie: `<span style="color:orange">childPopper={<LanguagePopper />}</span>` |              |
 
 ## License
 
