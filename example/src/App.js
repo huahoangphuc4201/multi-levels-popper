@@ -6,7 +6,7 @@ import SettingPopper from './components/SettingPopper'
 const App = () => {
   return (
     <div style={{ position: 'absolute', top: '50%', left: '50%' }}>
-      <MultiLevelsPopper arrow right dark basePopper={<SettingPopper />}>
+      <MultiLevelsPopper arrow right dark toggle basePopper={<SettingPopper />}>
         <div>Hover me!</div>
       </MultiLevelsPopper>
     </div>

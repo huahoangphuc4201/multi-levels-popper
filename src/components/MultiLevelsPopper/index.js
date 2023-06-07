@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames/bind'
 import styles from './MultiLevelsPopper.module.scss'
@@ -18,8 +18,25 @@ function MultiLevelsPopper({
   top,
   bottom,
   popperPosition,
-  dark
+  dark,
+  toggle = false
 }) {
+  const [show, setShow] = useState(false)
+  const [trigger, setTrigger] = useState(null)
+  const handleShow = (e) => {
+    if (trigger === null) {
+      setTrigger(e.target)
+      setShow(!show)
+    }
+    if (e.target === trigger) {
+      setShow(!show)
+    }
+  }
+  let Component
+  if (toggle) {
+    visible = true
+  }
+
   let position = {}
   if (popperPosition) {
     if (popperPosition.top) {
@@ -36,6 +53,40 @@ function MultiLevelsPopper({
     }
   }
 
+  if (toggle) {
+    let Popper
+    if (show) {
+      Popper = (
+        <Fragment>
+          {arrow && <span className={cx('arrow')} />}
+          <div className={cx('popper')} style={position}>
+            <MutilLevelsProvider theme={{ dark }}>
+              {basePopper}
+            </MutilLevelsProvider>
+          </div>
+        </Fragment>
+      )
+    }
+    Component = (
+      <div className={cx('trigger')} onClick={(e) => handleShow(e)}>
+        {children}
+        {Popper}
+      </div>
+    )
+  } else {
+    Component = (
+      <div className={cx('trigger')}>
+        {children}
+        {arrow && <span className={cx('arrow')} />}
+        <div className={cx('popper')} style={position}>
+          <MutilLevelsProvider theme={{ dark }}>
+            {basePopper}
+          </MutilLevelsProvider>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <GlobalStyles>
       <div
@@ -45,15 +96,7 @@ function MultiLevelsPopper({
           className
         }
       >
-        <div className={cx('trigger')}>
-          {children}
-          {arrow && <span className={cx('arrow')} />}
-          <div className={cx('popper')} style={position}>
-            <MutilLevelsProvider theme={{ dark }}>
-              {basePopper}
-            </MutilLevelsProvider>
-          </div>
-        </div>
+        {Component}
       </div>
     </GlobalStyles>
   )
@@ -75,6 +118,7 @@ MultiLevelsPopper.propTypes = {
     left: PropTypes.string,
     right: PropTypes.string
   }),
-  dark: PropTypes.bool
+  dark: PropTypes.bool,
+  toggle: PropTypes.bool
 }
 export default MultiLevelsPopper
