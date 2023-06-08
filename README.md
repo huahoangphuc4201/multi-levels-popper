@@ -14,14 +14,26 @@ npm install --save multi-levels-popper
 
 ## Usage
 
+In this example, we use [Tippy.js](https://www.npmjs.com/package/@tippyjs/react)(recommend) to display popper, you can use other libraries.
+
 ```jsx
 import { MultiLevelsPopper } from 'multi-levels-popper'
 
 const MyComponent = () => {
   return (
-    <MultiLevelsPopper right basePopper={<BasePopper />}>
-      <div>Hover me!</div>
-    </MultiLevelsPopper>
+    <Tippy
+      interactive
+      placement='right-start'
+      render={(attrs) => (
+        <MultiLevelsPopper>
+          <SettingPopper />
+        </MultiLevelsPopper>
+      )}
+    >
+      <button style={{ position: 'absolute', top: '200px', left: '200px' }}>
+        My button
+      </button>
+    </Tippy>
   )
 }
 ```
@@ -48,34 +60,28 @@ const SettingPopper = () => {
 }
 ```
 
-When you click on `PopperItem` which has `childPopper` prop, it will open the child popper.
+When you click on `PopperItem` which has `childPopper` prop, it will display the child popper.
 
 ## MultiLevelsPopper Props
 
-| **Prop**                      | **Description**                                                                                 | **Required** |
-| ----------------------------- | ----------------------------------------------------------------------------------------------- | :----------: |
-| **basePopper**                | The first level popper. ie: `basePopper={<BasePopper />}`                                       |      ✔       |
-| **[left, right, top bottom]** | Choose one of them, where you want to display popper.                                           |      ✔       |
-| **arrow**                     | Enable tooltip arrow.                                                                           |              |
-| **visible**                   | Always display popper.                                                                          |              |
-| **popperPosition**            | Change popper position easier. ie: `popperPosition={{top : '20px'}}` (left, right, top, bottom) |              |
-| **className**                 | You can pass className from parent.                                                             |              |
-| **dark**                      | Switch to dark theme.                                                                           |              |
-| **toggle**                    | Change popper's visibility by click on your element.                                            |              |
+| **Prop**     | **Description**         | **Required** |
+| ------------ | ----------------------- | :----------: |
+| **children** | The first level popper. |      ✔       |
+| **dark**     | Switch to dark theme.   |              |
 
 ## Popper Props
 
-| **Prop**      | **Description**                                               | **Required** |
-| ------------- | ------------------------------------------------------------- | :----------: |
-| **title**     | Popper's header title.                                        |              |
-| **maxHeigth** | This will enable vertical scroll bar. ie: `maxHeight='200px'` |              |
-| **className** | You can pass className from parent.                           |              |
+| **Prop**      | **Description**                                                    | **Required** |
+| ------------- | ------------------------------------------------------------------ | :----------: |
+| **title**     | Popper's header title.                                             |              |
+| **maxHeigth** | This will enable vertical scroll bar. Example: `maxHeight='200px'` |              |
+| **className** | You can pass className from parent.                                |              |
 
 ## PopperItem Props
 
-| **Prop**        | **Description**                                                         | **Required** |
-| --------------- | ----------------------------------------------------------------------- | :----------: |
-| **childPopper** | Child popper(next level popper). ie: `childPopper={<LanguagePopper />}` |              |
+| **Prop**        | **Description**                                                           | **Required** |
+| --------------- | ------------------------------------------------------------------------- | :----------: |
+| **childPopper** | Child popper(next level popper). Example: `childPopper={<ChildPopper />}` |              |
 
 ## License
 

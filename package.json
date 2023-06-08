@@ -13,7 +13,10 @@
     "multiple",
     "nested",
     "nested popper",
-    "multiple popper"
+    "multiple popper",
+    "menu",
+    "react",
+    "tooltip"
   ],
   "engines": {
     "node": ">=10"
